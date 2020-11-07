@@ -1,0 +1,10 @@
+RewriteEngine on
+
+#seo url olusturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#SEO URL Linklendirme
+
+RewriteRule ^haber/([0-9a-zA-Z-_]+) blog-details.php?blogs_slug=$1 [L,QSA]
